@@ -48,8 +48,9 @@ def codificar(texto):
             ajuste = ajuste_orig
         resultado = letras_codificadas
     return resultado
-def descodificados(codificados):
+def descodificador(codificados):
     lista_codificados = []
+    lista_descodificados = []
     while codificados > 0:
         print(" Los valores deben estar entre '48-57, 65-90 y 97-122'") 
         num_cod = int(input("Ingrese valores uno por uno: "))
@@ -58,14 +59,33 @@ def descodificados(codificados):
         elif num_cod > 65 and num_cod < 90:
             lista_codificados.append(num_cod)
         elif num_cod >97 and num_cod < 122:
-            lista_codificados.append(num_cod
+            lista_codificados.append(num_cod)
         else:
             print("Oye tranquilo viejo, estas ingresando valores fueras de los limites establecidos")
+            num_cod = int(input("Ingrese valores uno por uno: "))
         codificados -= 1
         long_lista_cod = len(lista_codificados)
-        while long_lista_cod < 0:
-            ajuste = int(input("¿Cuántas posiciones desea ajustar?: "))
-            ajuste_orig = ajuste
+    ajuste = int(input("¿Cuántas posiciones desea ajustar?: "))
+    ajuste_orig = ajuste
+    vuelta = 0
+    while long_lista_cod > 0:
+        while vuelta < long_lista_cod:
+            if ajuste > 0: 
+                while ajuste > 0: 
+                    ajustado = lista_codificados[vuelta] + 1
+                    lista_codificados[vuelta] = ajustado
+                    ajuste -= 1
+            else:
+                while ajuste < 0:
+                    ajustado = lista_codificados[vuelta] - 1
+                    lista_codificados[vuelta] = ajustado
+                    ajuste += 1
+            ajuste = ajuste_orig
+            vuelta += 1
+            lista_descodificados.append(ajustado)
+        long_lista_cod -= 1
+    return lista_descodificados
+            
             
 
 def principal():
@@ -79,7 +99,8 @@ def principal():
             print(resultado)
         elif eleccion == 2:
             codificados = int(input("cantidad de valores a decodificar: "))
-            resultado = descodificados(codificados)
+            resultado2 = descodificador(codificados)
+            print(resultado2)
         elif eleccion == 3:
             empezar = False
         else:
