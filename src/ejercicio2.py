@@ -3,7 +3,12 @@
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 
+
 def min_max_promedio(secuencia):
+    """
+    Funcion que determina el valor minimo, maximo y el promedio
+    los numeros ingresados
+    """
     long_secuencia = len(secuencia)
     mayor = secuencia[0]
     menor = secuencia[0]
@@ -19,10 +24,13 @@ def min_max_promedio(secuencia):
     promedio = (promedio // long_secuencia)
     lista = [menor, mayor, promedio]
     tupla = tuple(lista)
-    return tuple
+    return tupla
 
 
 def principal():
+    """
+    Programa
+    """
     limite_secuencia = int(input("¿Cuántos números desea ingresar?: "))
     secuencia = []
     print("Ingrese: ")
@@ -30,6 +38,8 @@ def principal():
         numero = int(input())
         secuencia.append(numero)
         limite_secuencia -= 1
-    print (min_max_promedio(secuencia))
+    print(min_max_promedio(secuencia))
+
+
 if __name__ == "__main__":
     principal()

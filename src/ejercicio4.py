@@ -5,8 +5,10 @@
 """
 4. Fibonacci
 """
-#Implementar una función que permita obtener el n-esimo termino de la 
-#sucesión de Fibonacci. Siendo este número un entero positivo mayor a 2.
+# Implementar una función que permita obtener el n-esimo termino de la
+# sucesión de Fibonacci. Siendo este número un entero positivo mayor a 2.
+
+
 def fibonacci(limite):
     """
     Función de la sucesion fibonacci

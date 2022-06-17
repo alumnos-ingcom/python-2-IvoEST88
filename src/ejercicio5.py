@@ -5,9 +5,14 @@
 """
 5. Corchetes balanceados
 """
-#Implementar una función que determine si una cadena con corchetes
-#está balanceada.
+# Implementar una función que determine si una cadena con corchetes
+# está balanceada.
+
+
 def corchetes_balanceados(corchetes):
+    """
+    Funcion con corchetes
+    """
     abierto = "["
     contador_abierto = 0
     cerrado = "]"
@@ -29,7 +34,11 @@ def corchetes_balanceados(corchetes):
             resultado = False
     return resultado
 
+
 def parentesis_balanceados(parentesis):
+    """
+    Funcion con parentesis
+    """
     abierto = "("
     contador_abierto = 0
     cerrado = ")"
@@ -51,7 +60,11 @@ def parentesis_balanceados(parentesis):
             resultado = False
     return resultado
 
+
 def llaves_balanceadas(llaves):
+    """
+    Funcion con llaves
+    """
     abierto = "{"
     contador_abierto = 0
     cerrado = "}"
@@ -72,7 +85,12 @@ def llaves_balanceadas(llaves):
         else:
             resultado = False
     return resultado
+
+
 def mixto_balanceado(mixto):
+    """
+    Funcion con corchetes, llaves y parentesis
+    """
     abierto = ["{", "[", "("]
     long_abierto = len(abierto)
     contador_abierto = 0
@@ -108,7 +126,11 @@ def mixto_balanceado(mixto):
 
 
 def principal():
-    print("¿Qué desea verificar?\n1. Corchetes.\n2. Paréntesis.\n3. Llaves.\n4. Mixto")
+    """
+    Programa
+    """
+    print("¿Qué desea verificar?\n1. Corchetes.\n2. Paréntesis.")
+    print("3. Llaves.\n4. Mixto.")
     eleccion = int(input("Ingrese su elección: "))
     if eleccion == 1:
         corchetes = input("Corchetes ---> ")
@@ -122,6 +144,7 @@ def principal():
     elif eleccion == 4:
         mixto = input("Ingrese los carácteres ---> ")
         print(mixto_balanceado(mixto))
-        
+
+
 if __name__ == "__main__":
     principal()
