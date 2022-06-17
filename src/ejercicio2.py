@@ -2,7 +2,11 @@
 # Nombre - @IvoEST88
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
-
+"""
+1. Pares e impares
+"""
+# Implementar una función que obtenga los máximos, mínimos y promedio de
+# una secuencia con números, retornando los valores como una `tuple`.
 
 def min_max_promedio(secuencia):
     """

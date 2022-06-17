@@ -2,6 +2,13 @@
 # Nombre - @IvoEST88
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
+"""
+1. Pares e impares
+"""
+# Escribir una función que retorne `True` cuando un número entero es par
+# `False` cuando no lo sea, sin utilizar módulo. (`%`)
+
+
 def es_par(numero):
     """
     Funcion que determina si un numero es par o impar
