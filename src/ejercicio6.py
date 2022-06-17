@@ -2,6 +2,13 @@
 # Nombre - @IvoEST88
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
+"""
+1. El Cifrado del Cesar (que grande cesar)
+"""
+# Implementar una funcion que codifique un texto rotandolo
+# una cantidad de posiciones ajustable.
+# Implementar la funcion que decodifique el texto rotado una
+# cantidad de posiciones ajustable.
 
 
 def codificar(texto, ajuste):
