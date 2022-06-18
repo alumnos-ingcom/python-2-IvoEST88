@@ -9,141 +9,50 @@
 # está balanceada.
 
 
-def corchetes_balanceados(corchetes):
-    """
-    Funcion con corchetes
-    """
-    abierto = "["
-    contador_abierto = 0
-    cerrado = "]"
-    contador_cerrado = 0
-    vueltas = 0
-    long_corchetes = len(corchetes)
-    while vueltas < long_corchetes:
-        if corchetes[vueltas] == abierto:
-            contador_abierto += 1
-        elif corchetes[vueltas] == cerrado:
-            contador_cerrado += 1
-        vueltas += 1
-    if contador_abierto == 0 or contador_cerrado == 0:
-        resultado = False
-    else:
-        if contador_abierto == contador_cerrado:
-            resultado = True
-        else:
-            resultado = False
-    return resultado
-
-
-def parentesis_balanceados(parentesis):
-    """
-    Funcion con parentesis
-    """
-    abierto = "("
-    contador_abierto = 0
-    cerrado = ")"
-    contador_cerrado = 0
-    vueltas = 0
-    long_parentesis = len(parentesis)
-    while vueltas < long_parentesis:
-        if parentesis[vueltas] == abierto:
-            contador_abierto += 1
-        elif parentesis[vueltas] == cerrado:
-            contador_cerrado += 1
-        vueltas += 1
-    if contador_abierto == 0 or contador_cerrado == 0:
-        resultado = False
-    else:
-        if contador_abierto == contador_cerrado:
-            resultado = True
-        else:
-            resultado = False
-    return resultado
-
-
-def llaves_balanceadas(llaves):
-    """
-    Funcion con llaves
-    """
-    abierto = "{"
-    contador_abierto = 0
-    cerrado = "}"
-    contador_cerrado = 0
-    vueltas = 0
-    long_llaves = len(llaves)
-    while vueltas < long_llaves:
-        if llaves[vueltas] == abierto:
-            contador_abierto += 1
-        elif llaves[vueltas] == cerrado:
-            contador_cerrado += 1
-        vueltas += 1
-    if contador_abierto == 0 or contador_cerrado == 0:
-        resultado = False
-    else:
-        if contador_abierto == contador_cerrado:
-            resultado = True
-        else:
-            resultado = False
-    return resultado
-
-
-def mixto_balanceado(mixto):
+def es_balanceado(cadena):
     """
     Funcion con corchetes, llaves y parentesis
     """
     abierto = ["{", "[", "("]
     long_abierto = len(abierto)
-    contador_abierto = 0
     cerrado = ["}", "]", ")"]
     long_cerrado = len(cerrado)
-    contador_cerrado = 0
+    contador = 0
     vueltas = 0
-    long_mixto = len(mixto)
-    while vueltas < long_mixto:
+    long_cadena = len(cadena)
+    while vueltas < long_cadena:
         abierto_vueltas = 0
         cerrado_vueltas = 0
         while abierto_vueltas < long_abierto:
-            if mixto[vueltas] == abierto[abierto_vueltas]:
-                contador_abierto += 1
+            if cadena[vueltas] == abierto[abierto_vueltas]:
+                contador += 1
                 abierto_vueltas += 1
             else:
                 abierto_vueltas += 1
         while cerrado_vueltas < long_cerrado:
-            if mixto[vueltas] == cerrado[cerrado_vueltas]:
-                contador_cerrado += 1
+            if cadena[vueltas] == cerrado[cerrado_vueltas]:
+                contador -= 1
                 cerrado_vueltas += 1
             else:
                 cerrado_vueltas += 1
+        if contador < 0:
+            resultado = False
+            break
         vueltas += 1
-    if contador_abierto == 0 or contador_cerrado == 0:
+    if contador != 0:
         resultado = False
     else:
-        if contador_abierto == contador_cerrado:
-            resultado = True
-        else:
-            resultado = False
+        resultado = True
     return resultado
 
 
 def principal():
     """
-    Programa
+    Programa fachero facherito
     """
-    print("¿Qué desea verificar?\n1. Corchetes.\n2. Paréntesis.")
-    print("3. Llaves.\n4. Mixto.")
-    eleccion = int(input("Ingrese su elección: "))
-    if eleccion == 1:
-        corchetes = input("Corchetes ---> ")
-        print(corchetes_balanceados(corchetes))
-    elif eleccion == 2:
-        parentesis = input("Paréntesis ---> ")
-        print(parentesis_balanceados(parentesis))
-    elif eleccion == 3:
-        llaves = input("Llaves ---> ")
-        print(llaves_balanceadas(llaves))
-    elif eleccion == 4:
-        mixto = input("Ingrese los carácteres ---> ")
-        print(mixto_balanceado(mixto))
+    cadena = input("Ingrese cadena: ")
+    resultado = es_balanceado(cadena)
+    print(resultado)
 
 
 if __name__ == "__main__":
