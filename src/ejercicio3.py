@@ -5,8 +5,11 @@
 """
 3. Súper-puestos
 """
-#Desarrollar una función que indique el grado de superposición entre dos listas.
-#Siendo 0 sin superposición y uno para cada elemento superpuesto.
+# Desarrollar una función que indique
+# el grado de superposición entre dos listas.
+# Siendo 0 sin superposición y uno para cada elemento superpuesto.
+
+
 def superposicion(frase1, frase2):
     """
     Funcion que indica cuales letras se repiten en ambas frases

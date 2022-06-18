@@ -8,6 +8,7 @@
 # Implementar una función que obtenga los máximos, mínimos y promedio de
 # una secuencia con números, retornando los valores como una `tuple`.
 
+
 def min_max_promedio(secuencia):
     """
     Funcion que determina el valor minimo, maximo y el promedio
