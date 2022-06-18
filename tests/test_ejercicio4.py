@@ -52,7 +52,7 @@ def test_fibonacci_lim100():
     """
     Obtener el termino nº10 de la sucesion
     """
-    limite = 100
+    limite = 50
     resultado = fibonacci(limite)
     assert isinstance(resultado, int), "El resultado debe ser 2"
-    assert resultado == 453973694165307953197296969697410619233826, "El resultado no es el esperado"
+    assert resultado == 573147844013817084101, "El resultado no es el esperado"

@@ -7,6 +7,7 @@ Tests de los ejercicios en la carpeta src
 """
 from src.ejercicio5 import es_balanceado
 
+
 def test_es_balanceado_corchetes_true1():
     """
     Test con corchetes

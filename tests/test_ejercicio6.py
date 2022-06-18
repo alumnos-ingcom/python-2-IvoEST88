@@ -15,7 +15,7 @@ def test_codificar_hola():
     texto = "hola"
     ajuste = 13
     resultado = codificar(texto, ajuste)
-    assert isinstance(resultado, list), "El resultado debe ser ['u', '1', 'y', 'n']"
+    assert isinstance(resultado, list), "Resultado es ['u', '1', 'y', 'n']"
     assert resultado == ['u', '1', 'y', 'n'], "El resultado no es el esperado"
 
 
@@ -26,7 +26,7 @@ def test_codificar_numeros():
     texto = "123"
     ajuste = 13
     resultado = codificar(texto, ajuste)
-    assert isinstance(resultado, list), "El resultado debe ser ['>', '?', '@']"
+    assert isinstance(resultado, list), "Resultado es ['>', '?', '@']"
     assert resultado == ['>', '?', '@'], "El resultado no es el esperado"
 
 
@@ -37,7 +37,7 @@ def test_codificar_HOLA():
     texto = "HOLA"
     ajuste = 13
     resultado = codificar(texto, ajuste)
-    assert isinstance(resultado, list), "El resultado debe ser ['U', '\\', 'Y', 'N']"
+    assert isinstance(resultado, list), "Resultado es ['U', '\\', 'Y', 'N']"
     assert resultado == ['U', '\\', 'Y', 'N'], "El resultado no es el esperado"
 
 
@@ -48,7 +48,7 @@ def test_codificar_iV0():
     texto = "iV0"
     ajuste = 13
     resultado = codificar(texto, ajuste)
-    assert isinstance(resultado, list), "El resultado debe ser ['v', 'c', '=']"
+    assert isinstance(resultado, list), "Resultado es ['v', 'c', '=']"
     assert resultado == ['v', 'c', '='], "El resultado no es el esperado"
 
 
@@ -58,9 +58,9 @@ def test_decodificar_hola():
     """
     resultado = ['u', '1', 'y', 'n']
     ajuste = 13
-    resultado_final = decodificar(resultado, ajuste)
-    assert isinstance (resultado_final, list), "El resultado debe ser ['h', 'o', 'l', 'a']"
-    assert resultado_final == ['h', 'o', 'l', 'a'], "El resultado no es el esperado"
+    resultado2 = decodificar(resultado, ajuste)
+    assert isinstance(resultado2, list), "Resultado es ['h', 'o', 'l', 'a']"
+    assert resultado2 == ['h', 'o', 'l', 'a'], "El resultado no es el esperado"
 
 
 def test_decodificar_numeros():
@@ -69,9 +69,9 @@ def test_decodificar_numeros():
     """
     resultado = ['>', '?', '@']
     ajuste = 13
-    resultado_final = decodificar(resultado, ajuste)
-    assert isinstance (resultado_final, list), "El resultado debe ser ['1', '2', '3']"
-    assert resultado_final == ['1', '2', '3'], "El resultado no es el esperado"
+    resultado2 = decodificar(resultado, ajuste)
+    assert isinstance(resultado2, list), "Resultado es ['1', '2', '3']"
+    assert resultado2 == ['1', '2', '3'], "El resultado no es el esperado"
 
 
 def test_decodificar_HOLA():
@@ -80,9 +80,9 @@ def test_decodificar_HOLA():
     """
     resultado = ['U', '\\', 'Y', 'N']
     ajuste = 13
-    resultado_final = decodificar(resultado, ajuste)
-    assert isinstance(resultado_final, list), "El resultado debe ser ['H', 'O', 'L', 'A']"
-    assert resultado_final == ['H', 'O', 'L', 'A'], "El resultado no es el esperado"
+    resultado2 = decodificar(resultado, ajuste)
+    assert isinstance(resultado2, list), "Resultado es ['H', 'O', 'L', 'A']"
+    assert resultado2 == ['H', 'O', 'L', 'A'], "El resultado no es el esperado"
 
 
 def test_decodificar_iV0():
@@ -91,6 +91,6 @@ def test_decodificar_iV0():
     """
     resultado = ['v', 'c', '=']
     ajuste = 13
-    resultado_final = decodificar(resultado, ajuste)
-    assert isinstance(resultado_final, list), "El resultado debe ser ['i', 'V', '0']"
-    assert resultado_final == ['i', 'V', '0'], "El resultado no es el esperado"
+    resultado2 = decodificar(resultado, ajuste)
+    assert isinstance(resultado2, list), "Resultado es ['i', 'V', '0']"
+    assert resultado2 == ['i', 'V', '0'], "El resultado no es el esperado"
