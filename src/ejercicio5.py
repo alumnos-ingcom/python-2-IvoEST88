@@ -13,22 +13,26 @@ def es_balanceado(cadena):
     """
     Funcion con corchetes, llaves y parentesis
     """
-    contador = 0
-    corchete_abierto = "["
-    corchete_cerrado = "]"
-    if cadena[0] == corchete_cerrado:
-        resultado = False
-        contador -= 1
-    else:
-        for i in cadena:
-            if i == corchete_abierto:
-                contador += 1
-            if i == corchete_cerrado:
-                contador += 1
-    if contador % 2 != 0:
-        resultado = False
-    if contador % 2 == 0:
+    contador_abiertos = 0
+    contador_cerrados = 0
+    corchete_abierto = ["[", "(", "{"]
+    corchete_cerrado = ["]", ")", "}"]
+    vueltas = 0
+    while vueltas != 3:
+        if cadena[0] == corchete_cerrado:
+            resultado = False
+            contador -= 1
+        else:
+            for i in cadena:
+                if i == corchete_abierto[vueltas]:
+                    contador_abiertos += 1
+                if i == corchete_cerrado[vueltas]:
+                    contador_cerrados += 1
+        vueltas += 1
+    if contador_abiertos - contador_cerrados == 0:
         resultado = True
+    else:
+        resultado = False
     return resultado
 
 
