@@ -13,35 +13,21 @@ def es_balanceado(cadena):
     """
     Funcion con corchetes, llaves y parentesis
     """
-    abierto = ["{", "[", "("]
-    long_abierto = len(abierto)
-    cerrado = ["}", "]", ")"]
-    long_cerrado = len(cerrado)
     contador = 0
-    vueltas = 0
-    long_cadena = len(cadena)
-    while vueltas < long_cadena:
-        abierto_vueltas = 0
-        cerrado_vueltas = 0
-        while abierto_vueltas < long_abierto:
-            if cadena[vueltas] == abierto[abierto_vueltas]:
-                contador += 1
-                abierto_vueltas += 1
-            else:
-                abierto_vueltas += 1
-        while cerrado_vueltas < long_cerrado:
-            if cadena[vueltas] == cerrado[cerrado_vueltas]:
-                contador -= 1
-                cerrado_vueltas += 1
-            else:
-                cerrado_vueltas += 1
-        if contador < 0:
-            resultado = False
-            break
-        vueltas += 1
-    if contador != 0:
+    corchete_abierto = "["
+    corchete_cerrado = "]"
+    if cadena[0] == corchete_cerrado:
         resultado = False
+        contador -= 1
     else:
+        for i in cadena:
+            if i == corchete_abierto:
+                contador += 1
+            if i == corchete_cerrado:
+                contador += 1
+    if contador % 2 != 0:
+        resultado = False
+    if contador % 2 == 0:
         resultado = True
     return resultado
 
