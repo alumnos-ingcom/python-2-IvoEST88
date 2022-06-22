@@ -15,7 +15,7 @@ def fibonacci(limite):
     """
     num_uno = 0
     num_dos = 1
-    if limite <= 0:
+    if limite <= 2:
         resultado = "Error"
     else:
         while limite > 0:
