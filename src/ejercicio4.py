@@ -18,11 +18,11 @@ def fibonacci(limite):
     if limite <= 2:
         resultado = "Error"
     else:
-        while limite > 0:
-            num_uno = num_uno + num_dos
-            num_dos = num_uno + num_dos
-            limite -= 1
-            resultado = num_dos
+        for i in range(limite):
+            num_tres = num_uno + num_dos
+            num_uno = num_dos
+            num_dos = num_tres
+            resultado = num_tres
     return resultado
 
 
