@@ -14,8 +14,8 @@ def test_fibonacci():
     """
     limite = 4
     resultado = fibonacci(limite)
-    assert isinstance(resultado, int), "El resultado debe ser 34"
-    assert resultado == 34, "El resultado no es el esperado"
+    assert isinstance(resultado, int), "El resultado debe ser 5"
+    assert resultado == 5, "El resultado no es el esperado"
 
 
 def test_fibonacci_lim1():
@@ -44,8 +44,8 @@ def test_fibonacci_lim10():
     """
     limite = 10
     resultado = fibonacci(limite)
-    assert isinstance(resultado, int), "El resultado debe ser 10946"
-    assert resultado == 10946, "El resultado no es el esperado"
+    assert isinstance(resultado, int), "El resultado debe ser 89"
+    assert resultado == 89, "El resultado no es el esperado"
 
 
 def test_fibonacci_lim100():
@@ -54,5 +54,5 @@ def test_fibonacci_lim100():
     """
     limite = 50
     resultado = fibonacci(limite)
-    assert isinstance(resultado, int), "El resultado debe ser 573147844013817084101"
-    assert resultado == 573147844013817084101, "El resultado no es el esperado"
+    assert isinstance(resultado, int), "El resultado debe ser 20365011074"
+    assert resultado == 20365011074, "El resultado no es el esperado"
